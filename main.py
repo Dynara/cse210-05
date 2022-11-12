@@ -27,15 +27,14 @@ def main():
     cast.add_actor("scores", Score())
 
     scores = cast.get_actors('scores')
+    scores = cast.get_actors('scores')
 
     # Player one
     scores[0].set_text('Player one:')
-    scores[0].set_color(constants.RED)
     scores[0].set_position(Point(15, 0))
 
     # Player two
     scores[1].set_text('Player two:')
-    scores[1].set_color(constants.GREEN)
     scores[1].set_position(Point(300, 0))
 
    

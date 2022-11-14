@@ -16,6 +16,7 @@ class HandleCollisionsAction(Action):
     def __init__(self):
         """Constructs a new HandleCollisionsAction."""
         self._is_game_over = False
+        self._winner = ''
 
     def execute(self, cast, script):
         """Executes the handle collisions action.
@@ -83,7 +84,8 @@ class HandleCollisionsAction(Action):
             for segment1 in segments1:
                 if head2.get_position().equals(segment1.get_position()):
                     self._is_game_over = True
-                    #self._winner = 'Player One'
+                    self._winner = 'Player One'
+                    return self._winner
 
         for segment in segments2:
             if head2.get_position().equals(segment.get_position()):
@@ -97,7 +99,8 @@ class HandleCollisionsAction(Action):
             for segment2 in segments2:
                 if head1.get_position().equals(segment2.get_position()):
                     self._is_game_over = True
-                    #self._winner = 'Player Two'
+                    self._winner = 'Player Two'
+                    return self._winner
             
 
 
@@ -120,8 +123,14 @@ class HandleCollisionsAction(Action):
             position = Point(x, y)
 
             message = Actor()
-            message.set_text("Game Over!")
+            message.set_text(f'Game Over! {self._winner}')
             message.set_position(position)
+
+            if self._winner == 'Player One':
+                message.set_color(constants.RED)
+            else:
+                message.set_color(constants.GREEN)
+                
             cast.add_actor("messages", message)
 
             for segment in segment1:

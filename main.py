@@ -20,6 +20,7 @@ def main():
     # create the cast
     cast = Cast()
     cast.add_actor("foods", Food())
+    
     cast.add_actor("snake1", Cycle(1))
     cast.add_actor("snake2", Cycle(2))
 
@@ -35,7 +36,7 @@ def main():
 
     # Player two
     scores[1].set_text('Player two:')
-    scores[1].set_position(Point(300, 0))
+    scores[1].set_position(Point(750, 0))
 
    
     # start the game

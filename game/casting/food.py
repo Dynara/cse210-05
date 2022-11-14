@@ -28,6 +28,7 @@ class Food(Actor):
         position = Point(x, y)
         position = position.scale(constants.CELL_SIZE)
         self.set_position(position)
+
         
     def get_points(self):
         """Gets the points the food is worth.

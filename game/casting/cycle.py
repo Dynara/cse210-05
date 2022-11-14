@@ -1,6 +1,7 @@
 import constants
 from game.casting.actor import Actor
 from game.shared.point import Point
+from game.services.keyboard_service import KeyboardService
 
 
 class Cycle(Actor):
@@ -53,7 +54,7 @@ class Cycle(Actor):
                 segment.set_color(constants.GREEN)
 
             self._segments.append(segment)
-
+        
 
     def turn_head(self, velocity):
         self._segments[0].set_velocity(velocity)

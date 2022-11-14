@@ -37,7 +37,7 @@ def main():
     scores[1].set_text('Player two:')
     scores[1].set_position(Point(300, 0))
 
-   
+
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()

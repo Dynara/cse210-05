@@ -128,9 +128,9 @@ class HandleCollisionsAction(Action):
 
             if self._winner == 'Player One':
                 message.set_color(constants.RED)
-            else:
+            elif self._winner == 'Player Two':
                 message.set_color(constants.GREEN)
-                
+
             cast.add_actor("messages", message)
 
             for segment in segment1:

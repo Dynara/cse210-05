@@ -24,21 +24,20 @@ def main():
     cast.add_actor("snake1", Cycle(1))
     cast.add_actor("snake2", Cycle(2))
 
-    cast.add_actor("scores", Score())
-    cast.add_actor("scores", Score())
+    cast.add_actor("scores", Score(Point(15, 0), "Player One: "))
+    cast.add_actor("scores", Score(Point(750, 0), "Player Two: "))
 
     scores = cast.get_actors('scores')
     scores = cast.get_actors('scores')
 
-    # Player one
-    scores[0].set_text('Player one:')
+    # Player one score, to show at start
+    scores[0].set_text('Player One:')
     scores[0].set_position(Point(15, 0))
 
-    # Player two
-    scores[1].set_text('Player two:')
+    # Player two score, to show at start
+    scores[1].set_text('Player Two:')
     scores[1].set_position(Point(750, 0))
 
-   
     # start the game
     keyboard_service = KeyboardService()
     video_service = VideoService()

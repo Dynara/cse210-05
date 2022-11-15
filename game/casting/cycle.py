@@ -18,7 +18,6 @@ class Cycle(Actor):
         self._num_player = num_player
         self._prepare_body()
 
-
     def get_segments(self):
         return self._segments
 
@@ -60,10 +59,10 @@ class Cycle(Actor):
         self._segments[0].set_velocity(velocity)
     
     def _prepare_body(self):
-
         if self._num_player == 1:
             x = int(constants.MAX_X / 3)
             y = int(constants.MAX_Y / 2)
+
         elif self._num_player == 2:
             x = int(constants.MAX_X / 1.5)
             y = int(constants.MAX_Y / 2)

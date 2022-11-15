@@ -37,7 +37,7 @@ class HandleCollisionsAction(Action):
         Args:
             cast (Cast): The cast of Actors in the game.
         """
-        score = cast.get_actors("scores")
+        _score = cast.get_actors("scores")
         food = cast.get_first_actor("foods")
 
         snake1 = cast.get_first_actor("snake1")
@@ -49,16 +49,18 @@ class HandleCollisionsAction(Action):
         if head1.get_position().equals(food.get_position()):
             points1 = food.get_points()
             snake1.grow_tail(points1, color= constants.WHITE)
-            score[0].add_points(points1)
+            _score[0].add_points(points1)
             food.reset()
-            return score[0]
+            self._player_one_score = _score[0]
+            return _score[0]
         
         elif head2.get_position().equals(food.get_position()):
             points2 = food.get_points()
             snake2.grow_tail(points2, color= constants.WHITE)
-            score[1].add_points(points2)
+            _score[1].add_points(points2)
             food.reset()
-            return score[1]
+            self._player_two_score = _score[1]
+            return _score[1]
     
     def _handle_segment_collision(self, cast):
         """Sets the game over flag if the snake collides with one of its segments.
@@ -120,11 +122,9 @@ class HandleCollisionsAction(Action):
             segment1 = snake1.get_segments()
             head1 = snake1.get_segments()[0]
             
-
             snake2 = cast.get_first_actor("snake2")
             segment2 = snake2.get_segments()
             head2 = snake1.get_segments()[0]
-
 
             x = int(constants.MAX_X / 2)
             y = int(constants.MAX_Y / 2)
@@ -143,21 +143,11 @@ class HandleCollisionsAction(Action):
 
             for segment in segment1:
                 segment.set_color(constants.WHITE)
-                #if head1.get_position().isclose(segment.get_position()):
                 # Set playable area
-                    #head1.set_position(Point(constants.MAX_X-100, 30))
-                    
 
             for segment in segment2:
                 segment.set_color(constants.WHITE)
                 # Set playable area
-                #if head2.get_position().isclose(segment1.get_position()):
-                    #head2.set_position(Point(constants.MAX_X-400, 30))
-                    
-
-          
-
-
-
-            
+             
+    
 

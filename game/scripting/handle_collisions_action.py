@@ -19,6 +19,8 @@ class HandleCollisionsAction(Action):
         """Constructs a new HandleCollisionsAction."""
         self._is_game_over = False
         self._winner = ''
+        self._player_one_score = 0
+        self._player_two_score = 0
 
     def execute(self, cast, script):
         """Executes the handle collisions action.
@@ -131,7 +133,10 @@ class HandleCollisionsAction(Action):
             position = Point(x, y)
 
             message = Actor()
-            message.set_text(f'Game Over! {self._winner}')
+            # For winner, could add {self._winner} after 'Game Over!', but unsure 
+            # if winner is player who doesn't run into the other player, or player 
+            # with highest points
+            message.set_text(f'Game Over!') 
             message.set_position(position)
 
             if self._winner == 'Player One':

@@ -1,4 +1,5 @@
 import constants
+import random
 from game.shared.color import Color
 from game.shared.point import Point
 

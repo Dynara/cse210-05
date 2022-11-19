@@ -67,6 +67,7 @@ class Cycle(Actor):
             x = int(constants.MAX_X / 1.5)
             y = int(constants.MAX_Y / 2)
 
+
         for i in range(constants.SNAKE_LENGTH):          
             position = Point(x - i * constants.CELL_SIZE, y)
             velocity = Point(1 * constants.CELL_SIZE, 0)

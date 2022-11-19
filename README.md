@@ -18,7 +18,7 @@ Each player's trail grows as they move. Players try to maneuver so the opponent 
 
 -Players keep moving and turning but don't run into each other.
 
-DESIGN: 
+PROJECT STRUCTURE: 
 
 Casting: 
   Classes: 
@@ -166,5 +166,8 @@ Shared:
         -reverse(self):
         -scale(self, factor):
   
+  REQUIRED SOFTWARE:
+  Visual Studio Code
+  Python 3.10.7
   
   Stacie Abbey: * email: srabbey@byui.edu *

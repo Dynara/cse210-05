@@ -122,7 +122,7 @@ class HandleCollisionsAction(Action):
 
             snake1 = cast.get_first_actor("snake1")
             head1 = snake1.get_segments()[0]
-            segments1 = snake1.get_segments()            
+            segments1 = snake1.get_segments()         
 
             snake2 = cast.get_first_actor("snake2")
             head2 = snake1.get_segments()[0]
